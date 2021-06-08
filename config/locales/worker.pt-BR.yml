@@ -1,0 +1,22 @@
+pt-BR:
+  activerecord:
+    models:
+      worker:
+        one: Funcionário(a)
+        other: Funcionários(as)
+    attributes:
+      worker:
+        password: Senha
+        password_confirmation: Confirmar senha
+        company: Preencher Dados da Empresa
+        cnpj: CNPJ
+        corporate_name: Nome da Empresa
+        billing_email: Email de cobrança
+        country: País
+        zip_code: CEP
+        state: Estado
+        city: Cidade
+        street: Rua
+        house_number: Número
+        complement: Complemento
+  create_account: 'Criar conta'

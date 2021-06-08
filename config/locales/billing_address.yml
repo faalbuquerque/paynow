@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    models:
+      billing_address:
+        one: Endereço de cobrança
+        other: Endereços de cobrança
+    attributes:
+      billing_address:
+        country: País
+        zip_code: CEP
+        state: Estado
+        city: Cidade
+        street: Rua
+        house_number: Número
+        complement: Complemento
+  create_account: Criar conta
+  sign_up: Tela de cadastro
+  billing_address: Endereço de cobrança
+  company_date: Dados da Empresa

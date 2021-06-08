@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      company:
+        one: Empresa
+        other: Empresas
+    attributes:
+      company:
+        cnpj: CNPJ
+        corporate_name: Nome da Empresa
+        billing_email: Email de cobrança
