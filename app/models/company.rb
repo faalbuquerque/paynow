@@ -20,4 +20,3 @@ class Company < ApplicationRecord
     address.save
   end
 end
-

@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Worker, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to(:company) }
+  it { should have_db_column(:admin) }
 end

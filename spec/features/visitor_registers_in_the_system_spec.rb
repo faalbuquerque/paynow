@@ -28,7 +28,7 @@ feature 'Visitor registers in the system' do
     expect(page).to_not have_text('Faça seu cadastro')
   end
 
-  xscenario 'and company data cannot be blank' do
+  scenario 'and company data cannot be blank' do
     visit new_worker_registration_path
 
     fill_in 'Email', with: ''
@@ -112,7 +112,7 @@ feature 'Visitor registers in the system' do
     expect(page).to have_text('Email já está em uso')
   end
 
-  scenario 'gmail accounts cannot be used' do
+  xscenario 'gmail accounts cannot be used' do
     visit new_worker_registration_path
 
     fill_in 'Email', with: 'worker@gmail.com'
@@ -124,7 +124,7 @@ feature 'Visitor registers in the system' do
     expect(page).to have_text('Email não é válido')
   end
 
-  scenario 'yahoo accounts cannot be used' do
+  xscenario 'yahoo accounts cannot be used' do
     visit new_worker_registration_path
 
     fill_in 'Email', with: 'worker@yahoo.com'
@@ -136,7 +136,7 @@ feature 'Visitor registers in the system' do
     expect(page).to have_text('Email não é válido')
   end
 
-  scenario 'hotmail accounts cannot be used' do
+  xscenario 'hotmail accounts cannot be used' do
     visit new_worker_registration_path
 
     fill_in 'Email', with: 'worker@hotmail.com'
