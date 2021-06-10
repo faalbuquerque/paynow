@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      admin:
+        one: Admin
+        other: Admins
+    attributes:
+      admin:
+        admin_name: Nome
+        password: Senha
+        password_confirmation: Confirmar senha
+  create_account: 'Criar conta'
+  admin_login: 'Login de Admin'
+  redir_admin: 'Parabens! Você descobriu o acesso secreto de admin! =)'

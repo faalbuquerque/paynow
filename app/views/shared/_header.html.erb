@@ -2,16 +2,20 @@
   <p>
     <%= current_worker.email %>
   </p>
-
   <p>
     <%= link_to t('logout'), destroy_worker_session_path, method: :delete %>
   </p>
-
+<% elsif admin_signed_in? %>
+  <p>
+    <%= current_admin.email %>
+  </p>
+  <p>
+    <%= link_to t('logout'), destroy_admin_session_path, method: :delete %>
+  </p>
 <% else %>
   <p>
     <%= link_to t('register'), new_worker_registration_path %>
   </p>
-
   <p>
     <%= link_to t('login_account'), new_worker_session_path %>
   </p>

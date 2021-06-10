@@ -84,7 +84,7 @@ feature 'Visitor registers in the system' do
     expect(page).to have_text('Número não pode ficar em branco')
   end
 
-  scenario 'and password not match' do
+  scenario 'and passwords not match' do
     visit new_worker_registration_path
     fill_in 'Email', with: 'worker@email.com'
     fill_in 'Senha', with: '123456'
