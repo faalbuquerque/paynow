@@ -112,7 +112,7 @@ feature 'Visitor registers in the system' do
     expect(page).to have_text('Email já está em uso')
   end
 
-  xscenario 'gmail accounts cannot be used' do
+  scenario 'gmail accounts cannot be used' do
     visit new_worker_registration_path
 
     fill_in 'Email', with: 'worker@gmail.com'
@@ -124,7 +124,7 @@ feature 'Visitor registers in the system' do
     expect(page).to have_text('Email não é válido')
   end
 
-  xscenario 'yahoo accounts cannot be used' do
+  scenario 'yahoo accounts cannot be used' do
     visit new_worker_registration_path
 
     fill_in 'Email', with: 'worker@yahoo.com'
@@ -136,7 +136,7 @@ feature 'Visitor registers in the system' do
     expect(page).to have_text('Email não é válido')
   end
 
-  xscenario 'hotmail accounts cannot be used' do
+  scenario 'hotmail accounts cannot be used' do
     visit new_worker_registration_path
 
     fill_in 'Email', with: 'worker@hotmail.com'
