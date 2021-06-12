@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Visitor registers in the system' do
+feature 'Visitor registers as worker' do
   scenario 'successfully' do
     visit root_path
     click_on 'Faça seu cadastro'
