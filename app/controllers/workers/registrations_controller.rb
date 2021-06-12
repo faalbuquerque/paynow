@@ -37,8 +37,7 @@ class Workers::RegistrationsController < Devise::RegistrationsController
 
   def company_params
     params.require(:worker).permit(:cnpj, :corporate_name,:billing_email)
-                           .merge(domain: Company.get_domain(params[:worker][:email]),
-                                  token: Company.create_token)
+                           .merge(domain: Company.get_domain(params[:worker][:email]))
   end
 
   def address_params

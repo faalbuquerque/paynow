@@ -96,9 +96,13 @@ feature 'Visitor registers in the system' do
   end
 
   scenario 'and email not unique' do
-    company = Company.create!(cnpj: '57.065.291/0001-13',
-                              corporate_name: 'Codeplay',
-                              billing_email: 'code@email.com')
+    company = Company.new(cnpj: '57.065.291/0001-13',
+                          corporate_name: 'Codeplay',
+                          billing_email: 'code@email.com')
+
+    company.create_token
+    company.save!
+
     Worker.create!(email:'worker@email.com', password: '123456',
                    password_confirmation: '123456', company: company)
 

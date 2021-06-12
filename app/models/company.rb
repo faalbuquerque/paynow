@@ -6,8 +6,10 @@ class Company < ApplicationRecord
   validates :corporate_name, presence: true
   validates :billing_email, presence: true
 
-  def self.create_token
-    'jghmhgfhjgy5678iuhggj0gu'
+  def create_token
+    input = self.corporate_name + Time.current.to_s + rand.to_s
+    company_hash = Digest::SHA256.hexdigest(input)[0..19]
+    self.token = company_hash
   end
 
   def self.get_domain(params)
@@ -15,6 +17,7 @@ class Company < ApplicationRecord
   end
 
   def persist_company(address)
+    self.create_token
     self.save
     address.company_id = self.id
     address.save
