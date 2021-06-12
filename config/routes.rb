@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   namespace :manages do
     resources :admins, only: %i[ index ]
   end
+
+  namespace :workers do
+    resources :companies, only: %i[ show ]
+  end
+
 end
