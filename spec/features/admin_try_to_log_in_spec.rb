@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Admin try to log in' do
   scenario 'successfully' do
     Admin.create!(admin_name: 'Potato', email: 'potato@paynow.com',
-                  password:'wonyap', password_confirmation:'wonyap')
+                  password:'wonyap')
 
     visit new_worker_session_path
 
@@ -29,7 +29,7 @@ feature 'Admin try to log in' do
 
   scenario 'password doesn\'t match' do
     Admin.create!(admin_name: 'Potato', email: 'potato@paynow.com',
-                  password:'wonyap', password_confirmation:'wonyap')
+                  password:'wonyap')
 
     visit new_worker_session_path
 
@@ -43,7 +43,7 @@ feature 'Admin try to log in' do
 
   scenario 'and check if admin' do
     admin = Admin.create!(admin_name: 'Potato', email: 'potato@paynow.com',
-                          password:'wonyap', password_confirmation:'wonyap')
+                          password:'wonyap')
 
     login_as admin, scope: :admin
     visit admin_session_path
