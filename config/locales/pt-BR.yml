@@ -222,3 +222,5 @@ pt-BR:
       short: "%d de %B, %H:%M"
     pm: ''
   login: 'Entrar'
+
+  unauthorized: 'Acesso não autorizado!'

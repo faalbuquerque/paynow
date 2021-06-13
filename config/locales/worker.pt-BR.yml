@@ -22,3 +22,9 @@ pt-BR:
   create_account: 'Criar conta'
   company_data: Dados da Empresa
   my_company: Minha empresa
+
+  workers:
+    companies:
+      show:
+        alter_token: Gerar novo token
+        confirm_alter_token: Tem certeza disso?(Irreversivel!)

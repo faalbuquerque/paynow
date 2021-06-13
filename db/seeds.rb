@@ -12,7 +12,7 @@ company.create_token
 company.save!
 
 admin_company = company.workers.create!(email: 'admin_company@company.com',
-                                        password: '123456')
+                                        password: '123456', admin: true)
 
 user_company = company.workers.create!(email: 'user_company@company.com',
-                                       password: '123456')
+                                       password: '123456', admin: false)

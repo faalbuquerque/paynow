@@ -7,7 +7,16 @@
 <br>
 
 <p>
-  Token: <%= @company.token %>
+  Token:
+  <span id='company_token'>
+    <%= @company.token %>
+  </span>
+
+  <% if current_worker.admin? %>
+    <%= button_to t('.alter_token'), workers_company_alter_token_path,
+                                     remote: true, method: :put,
+                                     data: { confirm: t('.confirm_alter_token') } %>
+  <% end %>
 </p>
 
 <p>
