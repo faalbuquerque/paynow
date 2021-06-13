@@ -1,26 +1,23 @@
+<%= link_to  root_path do%>
+  <h2>PayNow</h2>
+<% end %>
+
 <% if worker_signed_in? %>
   <p>
-    <%= current_worker.email %>
-  </p>
-  <p>
+    <%= current_worker.email %> | 
+    <%= link_to t('my_company'), workers_company_path(current_worker.company) %> | 
     <%= link_to t('logout'), destroy_worker_session_path, method: :delete %>
-  </p>
-  <hr>
-  <p>
-    <%= link_to t('my_company'), workers_company_path(current_worker.company) %>
   </p>
 <% elsif admin_signed_in? %>
   <p>
-    <%= current_admin.email %>
-  </p>
-  <p>
+    <%= current_admin.email %> | 
+    <%= link_to 'Dashboard', manages_admins_path %> | 
     <%= link_to t('logout'), destroy_admin_session_path, method: :delete %>
   </p>
 <% else %>
   <p>
-    <%= link_to t('register'), new_worker_registration_path %>
-  </p>
-  <p>
+    <%= link_to t('register'), new_worker_registration_path %> | 
     <%= link_to t('login_account'), new_worker_session_path %>
   </p>
 <% end %>
+<hr>
