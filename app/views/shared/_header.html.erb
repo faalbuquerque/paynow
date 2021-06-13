@@ -11,7 +11,7 @@
 <% elsif admin_signed_in? %>
   <p>
     <%= current_admin.email %> | 
-    <%= link_to 'Dashboard', manages_admins_path %> | 
+    <%= link_to 'Dashboard', admins_manages_path %> | 
     <%= link_to t('logout'), destroy_admin_session_path, method: :delete %>
   </p>
 <% else %>

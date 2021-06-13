@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   devise_for :workers, controllers: { registrations: "workers/registrations",
                                       sessions: 'workers/sessions' }
 
-  namespace :manages do
-    resources :admins, only: %i[ index ]
+  namespace :admins do
+    resources :manages, only: %i[ index ]
   end
 
   namespace :workers do
