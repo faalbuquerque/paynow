@@ -22,9 +22,20 @@ pt-BR:
   create_account: 'Criar conta'
   company_data: Dados da Empresa
   my_company: Minha empresa
+  manage_worker: Administração de funcionários
+  accesses_unblock: Acesso liberado para
+  accesses_block: Acesso bloqueado para
 
   workers:
     companies:
       show:
         alter_token: Gerar novo token
         confirm_alter_token: Tem certeza disso?(Irreversivel!)
+    accesses:
+      show:
+        block: Bloquear acesso
+        unblock: Desbloquear acesso
+    sessions:
+      create:
+        blocked: Sua conta está bloqueada!
+        email_password_incorrect: Email ou senha inválidaaa.

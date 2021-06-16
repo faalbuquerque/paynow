@@ -6,8 +6,16 @@
   <p>
     <%= current_worker.email %> | 
     <%= link_to t('my_company'), workers_company_path(current_worker.company) %> | 
+
+  <% if current_worker.admin?  %>
+    <%= link_to t('manage_worker'), workers_access_path(current_worker) %> | 
+  <% end %>
+
     <%= link_to t('logout'), destroy_worker_session_path, method: :delete %>
   </p>
+
+
+
 <% elsif admin_signed_in? %>
   <p>
     <%= current_admin.email %> | 

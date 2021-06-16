@@ -1,0 +1,23 @@
+<h3><%= t('manage_worker') %></h3>
+<hr>
+
+<% @workers.each do |worker| %>
+  <p>
+    <%= worker.email %>
+  </p>
+
+  <p>
+    Status: <%= worker.status %>
+  </p>
+
+  <% if current_worker.admin? %>
+
+    <% if worker.status.eql?("block") %>
+      <%= link_to t('.unblock'), workers_access_path(worker), method: :put %>
+    <% else %>
+      <%= link_to t('.block'), workers_access_path(worker), method: :put %>
+    <% end %>
+
+  <% end %>
+  <hr>
+<% end %>

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   namespace :workers do
     resources :companies, only: %i[ show ]
+    resources :accesses, only: %i[ show update ]
     put 'company/alter-token', to: 'companies#reset_token'
   end
 end

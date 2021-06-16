@@ -6,6 +6,8 @@ class Worker < ApplicationRecord
 
   validate :check_email
 
+  enum status: { released: 0, block: 1 }
+
   private
 
   def check_email
