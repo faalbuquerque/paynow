@@ -21,7 +21,7 @@ class Workers::SessionsController < Devise::SessionsController
 
   def check_access!
     worker = Worker.find_by(email: params[:worker][:email])
-    if worker && worker.status == "block"
+    if worker && worker.status.eql?("block")
       return redirect_to new_worker_session_path, alert: t('.blocked')
     end
   end

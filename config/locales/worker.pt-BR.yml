@@ -38,4 +38,3 @@ pt-BR:
     sessions:
       create:
         blocked: Sua conta está bloqueada!
-        email_password_incorrect: Email ou senha inválidaaa.
