@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_165540) do
+ActiveRecord::Schema.define(version: 2021_06_16_234124) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 2021_06_15_165540) do
     t.index ["company_id"], name: "index_billing_addresses_on_company_id"
   end
 
+  create_table "clients", force: :cascade do |t|
+    t.string "token"
+    t.string "name"
+    t.string "surname"
+    t.string "cpf"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "companies", force: :cascade do |t|
     t.string "cnpj"
     t.string "corporate_name"
@@ -48,6 +57,15 @@ ActiveRecord::Schema.define(version: 2021_06_15_165540) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "domain"
     t.index ["domain"], name: "index_companies_on_domain", unique: true
+  end
+
+  create_table "company_tokens", force: :cascade do |t|
+    t.string "token"
+    t.integer "company_id"
+    t.integer "client_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_company_tokens_on_client_id"
   end
 
   create_table "workers", force: :cascade do |t|
@@ -67,5 +85,6 @@ ActiveRecord::Schema.define(version: 2021_06_15_165540) do
   end
 
   add_foreign_key "billing_addresses", "companies"
+  add_foreign_key "company_tokens", "clients"
   add_foreign_key "workers", "companies"
 end
