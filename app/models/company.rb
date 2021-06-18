@@ -22,4 +22,12 @@ class Company < ApplicationRecord
     address.company_id = self.id
     address.save
   end
+
+  def update_own_company_tokens
+    clients_company_tokens = CompanyToken.where(company_id: self.id)
+
+    clients_company_tokens.each do |client_company_token|
+      client_company_token.update(token: self.token)
+    end
+  end
 end

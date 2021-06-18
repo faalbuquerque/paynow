@@ -21,6 +21,4 @@ Rails.application.routes.draw do
       resources :clients, only: %i[ index show create ]
     end
   end
-
-  resources :company_tokens, only: %i[ create ]
 end

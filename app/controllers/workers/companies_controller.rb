@@ -11,6 +11,8 @@ class Workers::CompaniesController < ApplicationController
     @company.create_token
     @company.save!
 
+    @company.update_own_company_tokens
+
     respond_to do |format|
       format.js { render partial: 'reset_token' }
     end

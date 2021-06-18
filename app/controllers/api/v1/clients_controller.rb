@@ -2,14 +2,26 @@ class Api::V1::ClientsController < ActionController::API
 
   def  index
     @clients = Client.all
-
     render json: @clients.as_json(except: [:token, :id, :created_at, :updated_at])
   end
 
   def create
-    @client = Client.new(client_params)
-    create_client_token(@client)
-    @client.save!
+    @company = Company.find_by(token: params[:client][:company_token])
+    @client = Client.find_by(cpf: params[:client][:cpf])
+
+    unless @company
+      return render json: { message: 'parâmetros inválidos' }
+    end
+
+    unless @client
+      @client = Client.create!(client_params)
+      @client.create_client_token
+      @client.save!
+    end
+
+    unless @client.company_tokens.exists?(company_id: @company.id)
+      @client.company_tokens.create!(token: @company.token, company_id: @company.id)
+    end
 
     render json: @client.as_json(except: [:token, :id, :created_at, :updated_at])
   end
@@ -17,19 +29,11 @@ class Api::V1::ClientsController < ActionController::API
   def show
     @client = Client.find_by(id: params[:id])
     render json: @client.as_json(except: [:token, :id, :created_at, :updated_at])
-  rescue ActiveRecord::RecordNotFound
-    head 404
   end
 
   private
 
   def client_params
     params.require(:client).permit(:name, :surname, :cpf)
-  end
-
-  def create_client_token(client)
-    input = client.cpf + Time.current.to_s + rand.to_s
-    client_hash = Digest::SHA256.hexdigest(input)[0..19]
-    client.token = client_hash
   end
 end
