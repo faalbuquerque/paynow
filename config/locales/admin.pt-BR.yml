@@ -11,4 +11,10 @@ pt-BR:
         password_confirmation: Confirmar senha
   create_account: 'Criar conta'
   admin_login: 'Login de Admin'
-  redir_admin: 'Parabens! Você descobriu o acesso secreto de admin! =)'
+  payment_methods: Metodos de pagamento
+  admins:
+    manages:
+      index:
+        pix_methods: Pix
+        card_methods: Cartão de Crédito
+        billet_methods: Boleto

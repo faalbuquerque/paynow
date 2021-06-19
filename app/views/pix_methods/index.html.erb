@@ -1,0 +1,36 @@
+<p><%= link_to t('back'), admins_manages_path %></p>
+
+<h3><%= t('.pix_method') %></h3>
+
+<p><%= link_to t('.add'), new_pix_method_path %></p>
+
+<% @pix_methods.each do |pix_method| %>
+  <p>
+    <%= link_to pix_method.name, pix_method_path(pix_method) %>
+  </p>
+
+  <p>
+    <%= pix_method.tax_charge %>
+  </p>
+
+  <p>
+    <%= pix_method.tax_max %>
+  </p>
+
+  <p>
+    <%= pix_method.code_bank %>
+  </p>
+
+  <p>
+    <%= pix_method.code_pix %>
+  </p>
+
+  <p>
+    <%= pix_method.available? ? t('.available') : t('.unavailable') %>
+  </p>
+
+  <p>
+    <%= link_to  t('.edit'), edit_pix_method_path(pix_method) %>
+  </p>
+  <hr>
+<% end %>

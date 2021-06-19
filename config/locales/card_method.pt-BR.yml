@@ -1,0 +1,33 @@
+pt-BR:
+  activerecord:
+    models:
+      card_method:
+        one: Cartão
+        other: Cartões
+    attributes:
+      card_method:
+        name: Nome
+        icon: Ícone
+        tax_charge: Taxa de cobrança
+        tax_max: Taxa máxima
+        code: Código do banco
+        available: Disponibilizar
+  card_methods:
+    create:
+      success: Cartão adicionado com sucesso!
+    update:
+      success: Cartão alterado com sucesso!
+    index:
+      add: Adicionar
+      card_method: Cartão de crédito
+      edit: Editar
+      available: Disponivel
+      unavailable: Indisponivel
+    new:
+      add_new_card: Adicionar novo tipo de Cartão
+    show:
+      details: Detalhes do Cartão
+      available: Disponivel
+      unavailable: Indisponivel
+    edit:
+      edit_card: Editar Cartão

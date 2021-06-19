@@ -1,0 +1,23 @@
+<p><%= link_to t('back'), card_methods_path %></p>
+
+<h3><%= t('.details')%></h3>
+
+<p>
+  <%= @card_method.name %>
+</p>
+
+<p>
+  <%= @card_method.tax_charge %>
+</p>
+
+<p>
+  <%= @card_method.tax_max %>
+</p>
+
+<p>
+  <%= @card_method.code %>
+</p>
+
+<p>
+  <%= @card_method.available? ? t('.available') : t('.unavailable') %>
+</p>

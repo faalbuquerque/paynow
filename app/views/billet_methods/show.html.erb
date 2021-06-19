@@ -1,0 +1,31 @@
+<p><%= link_to t('back'), billet_methods_path %></p>
+
+<h3><%= t('.details')%></h3>
+
+<p>
+  <%= @billet_method.name %>
+</p>
+
+<p>
+  <%= @billet_method.tax_charge %>
+</p>
+
+<p>
+  <%= @billet_method.tax_max %>
+</p>
+
+<p>
+  <%= @billet_method.code_bank %>
+</p>
+
+<p>
+  <%= @billet_method.agency_bank %>
+</p>
+
+<p>
+  <%= @billet_method.account_number %>
+</p>
+
+<p>
+  <%= @billet_method.available? ? t('.available') : t('.unavailable') %>
+</p>

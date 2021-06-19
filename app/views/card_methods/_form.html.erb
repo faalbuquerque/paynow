@@ -1,0 +1,34 @@
+<%= form_with model: card_method, local: true do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <%= f.label :icon %>
+    <%= f.text_field :icon %>
+  </p>
+
+  <p>
+    <%= f.label :tax_charge %>
+    <%= f.number_field :tax_charge %>
+  </p>
+
+  <p>
+    <%= f.label :tax_max %>
+    <%= f.number_field :tax_max %>
+  </p>
+
+  <p>
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </p>
+
+  <p>
+    <%= f.label :available %>
+    <%= f.check_box :available %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

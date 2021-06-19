@@ -1,6 +1,9 @@
 class Company < ApplicationRecord
   has_one :billing_address
   has_many :workers
+  has_many :pix_methods
+  has_many :card_methods
+  has_many :billet_methods
 
   validates :cnpj, presence: true
   validates :corporate_name, presence: true

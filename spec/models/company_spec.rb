@@ -4,6 +4,9 @@ RSpec.describe Company, type: :model do
   it { should have_many(:workers) }
   it { should have_db_column(:domain) }
   it { should have_db_column(:token) }
+  it { should have_many(:card_methods) }
+  it { should have_many(:billet_methods) }
+  it { should have_many(:pix_methods) }
 
   context 'should check if' do
     it 'typed correct password' do

@@ -1,0 +1,7 @@
+<p><%= link_to t('back'), pix_methods_path %></p>
+
+<h3><%= t('.edit_pix') %></h3>
+
+<%= render 'shared/errors', object: @pix_method %>
+
+<%= render 'form', pix_method: @pix_method %>

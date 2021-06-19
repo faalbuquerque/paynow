@@ -1,0 +1,32 @@
+<p><%= link_to t('back'), admins_manages_path %></p>
+
+<h3><%= t('.card_method') %></h3>
+
+<p><%= link_to t('.add'), new_card_method_path %></p>
+
+<% @card_methods.each do |card_method| %>
+  <p>
+    <%= link_to card_method.name, card_method_path(card_method) %>
+  </p>
+
+  <p>
+    <%= card_method.tax_charge %>
+  </p>
+
+  <p>
+    <%= card_method.tax_max %>
+  </p>
+
+  <p>
+    <%= card_method.code %>
+  </p>
+
+  <p>
+    <%= card_method.available? ? t('.available') : t('.unavailable') %>
+  </p>
+
+  <p>
+    <%= link_to  t('.edit'), edit_card_method_path(card_method) %>
+  </p>
+  <hr>
+<% end %>

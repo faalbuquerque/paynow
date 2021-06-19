@@ -1,0 +1,7 @@
+<p><%= link_to t('back'), card_methods_path %></p>
+
+<h3><%= t('.add_new_card') %></h3>
+
+<%= render 'shared/errors', object: @card_method %>
+
+<%= render 'form', card_method: @card_method %>

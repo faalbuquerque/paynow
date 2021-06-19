@@ -223,4 +223,6 @@ pt-BR:
     pm: ''
   login: 'Entrar'
 
-  unauthorized: 'Acesso não autorizado!'
+  unauthorized: Acesso não autorizado!
+  back: Voltar
+  edit: Editar

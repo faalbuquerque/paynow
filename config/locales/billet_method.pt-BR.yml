@@ -1,0 +1,35 @@
+pt-BR:
+  activerecord:
+    models:
+      billet_method:
+        one: Boleto
+        other: Boletos
+    attributes:
+      billet_method:
+        name: Nome
+        icon: Ícone
+        tax_charge: Taxa de cobrança
+        tax_max: Taxa máxima
+        code_bank: Código do banco
+        agency_bank: Número de agencia
+        account_number: Número da conta
+        available: Disponibilizar
+  billet_methods:
+    create:
+      success: Boleto adicionado com sucesso!
+    update:
+      success: Boleto alterado com sucesso!
+    index:
+      add: Adicionar
+      billet_method: Boleto
+      edit: Editar
+      available: Disponivel
+      unavailable: Indisponivel
+    new:
+      add_new_billet: Adicionar novo tipo de Boleto
+    show:
+      details: Detalhes do Boleto
+      available: Disponivel
+      unavailable: Indisponivel
+    edit:
+      edit_billet: Editar Boleto

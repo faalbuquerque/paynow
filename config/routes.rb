@@ -21,4 +21,8 @@ Rails.application.routes.draw do
       resources :clients, only: %i[ index show create ]
     end
   end
+
+  resources :pix_methods, only: %i[ index show new create edit update ]
+  resources :card_methods, only: %i[ index show new create edit update ]
+  resources :billet_methods, only: %i[ index show new create edit update  ]
 end

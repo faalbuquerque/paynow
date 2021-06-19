@@ -1,3 +1,6 @@
+@paynow = Company.create(cnpj: '24.098.348/0001-21', corporate_name:'Paynow',
+                         billing_email: 'paynow@company.com')
+
 maria = Admin.create!(admin_name: 'Maria', email: 'maria_admin@paynow.com',
                       password: '123456', password_confirmation: '123456')
 

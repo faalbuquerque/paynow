@@ -1,0 +1,33 @@
+pt-BR:
+  activerecord:
+    models:
+      pix_method:
+        one: Pix
+        other: Cartões
+    attributes:
+      pix_method:
+        name: Nome
+        icon: Ícone
+        tax_charge: Taxa de cobrança
+        tax_max: Taxa máxima
+        code: Código do banco
+        available: Disponibilizar
+  pix_methods:
+    create:
+      success: Pix adicionado com sucesso!
+    update:
+      success: Pix alterado com sucesso!
+    index:
+      add: Adicionar
+      pix_method: Pix
+      edit: Editar
+      available: Disponivel
+      unavailable: Indisponivel
+    new:
+      add_new_pix: Adicionar novo tipo de Pix
+    show:
+      details: Detalhes do Pix
+      available: Disponivel
+      unavailable: Indisponivel
+    edit:
+      edit_pix: Editar Pix

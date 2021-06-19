@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_16_234124) do
+ActiveRecord::Schema.define(version: 2021_06_18_204957) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(version: 2021_06_16_234124) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "billet_methods", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.string "tax_charge"
+    t.string "tax_max"
+    t.boolean "available", default: false
+    t.string "code_bank"
+    t.string "agency_bank"
+    t.string "account_number"
+    t.integer "company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_billet_methods_on_company_id"
+  end
+
   create_table "billing_addresses", force: :cascade do |t|
     t.string "zip_code"
     t.string "state"
@@ -37,6 +52,19 @@ ActiveRecord::Schema.define(version: 2021_06_16_234124) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_billing_addresses_on_company_id"
+  end
+
+  create_table "card_methods", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.string "tax_charge"
+    t.string "tax_max"
+    t.boolean "available", default: false
+    t.string "code"
+    t.integer "company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_card_methods_on_company_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -68,6 +96,20 @@ ActiveRecord::Schema.define(version: 2021_06_16_234124) do
     t.index ["client_id"], name: "index_company_tokens_on_client_id"
   end
 
+  create_table "pix_methods", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.string "tax_charge"
+    t.string "tax_max"
+    t.boolean "available", default: false
+    t.string "code_bank"
+    t.string "code_pix"
+    t.integer "company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_pix_methods_on_company_id"
+  end
+
   create_table "workers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -84,7 +126,10 @@ ActiveRecord::Schema.define(version: 2021_06_16_234124) do
     t.index ["reset_password_token"], name: "index_workers_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "billet_methods", "companies"
   add_foreign_key "billing_addresses", "companies"
+  add_foreign_key "card_methods", "companies"
   add_foreign_key "company_tokens", "clients"
+  add_foreign_key "pix_methods", "companies"
   add_foreign_key "workers", "companies"
 end
