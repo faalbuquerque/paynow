@@ -10,7 +10,8 @@ pt-BR:
         icon: Ícone
         tax_charge: Taxa de cobrança
         tax_max: Taxa máxima
-        code: Código do banco
+        code_bank: Código do banco
+        code_pix: Código Pix
         available: Disponibilizar
   pix_methods:
     create:

@@ -18,8 +18,8 @@ feature 'Admin manages Pix payment method' do
     fill_in 'Ícone', with: 'imagem no futuro'
     fill_in 'Taxa de cobrança', with: '4,5%'
     fill_in 'Taxa máxima', with: '6%'
-    fill_in 'Code bank', with: '127'
-    fill_in 'Code pix', with: '7f44bab8b08a3fb07555'
+    fill_in 'Código do banco', with: '127'
+    fill_in 'Código Pix', with: '7f44bab8b08a3fb07555'
     click_on 'Criar Pix'
 
     expect(page).to have_text('Pix')
@@ -51,8 +51,8 @@ feature 'Admin manages Pix payment method' do
     fill_in 'Ícone', with: 'imagem no fut'
     fill_in 'Taxa de cobrança', with: '4,5%'
     fill_in 'Taxa máxima', with: '6%'
-    fill_in 'Code bank', with: '127'
-    fill_in 'Code pix', with: '7f44b8b08a3fb07555'
+    fill_in 'Código do banco', with: '127'
+    fill_in 'Código Pix', with: '7f44b8b08a3fb07555'
     click_on 'Atualizar Pix'
 
     expect(page).to have_text('Pix 2')
@@ -83,15 +83,15 @@ feature 'Admin manages Pix payment method' do
     fill_in 'Nome', with: ''
     fill_in 'Taxa de cobrança', with: ''
     fill_in 'Taxa máxima', with: ''
-    fill_in 'Code bank', with: ''
-    fill_in 'Code pix', with: ''
+    fill_in 'Código do banco', with: ''
+    fill_in 'Código Pix', with: ''
     click_on 'Atualizar Pix'
 
     expect(page).to have_text('Nome não pode ficar em branco')
     expect(page).to have_text('Taxa de cobrança não pode ficar em branco')
     expect(page).to have_text('Taxa máxima não pode ficar em branco')
-    expect(page).to have_text('Code bank não pode ficar em branco')
-    expect(page).to have_text('Code pix não pode ficar em branco')
+    expect(page).to have_text('Código do banco não pode ficar em branco')
+    expect(page).to have_text('Código Pix não pode ficar em branco')
 
   end
 
@@ -111,15 +111,15 @@ feature 'Admin manages Pix payment method' do
     fill_in 'Nome', with: ''
     fill_in 'Taxa de cobrança', with: ''
     fill_in 'Taxa máxima', with: ''
-    fill_in 'Code bank', with: ''
-    fill_in 'Code pix', with: ''
+    fill_in 'Código do banco', with: ''
+    fill_in 'Código Pix', with: ''
     click_on 'Criar Pix'
 
     expect(page).to have_text('Nome não pode ficar em branco')
     expect(page).to have_text('Taxa de cobrança não pode ficar em branco')
     expect(page).to have_text('Taxa máxima não pode ficar em branco')
-    expect(page).to have_text('Code bank não pode ficar em branco')
-    expect(page).to have_text('Code pix não pode ficar em branco')
+    expect(page).to have_text('Código do banco não pode ficar em branco')
+    expect(page).to have_text('Código Pix não pode ficar em branco')
   end
 
   scenario 'only administrator can add pix method' do
@@ -139,8 +139,8 @@ feature 'Admin manages Pix payment method' do
     fill_in 'Ícone', with: 'imagem no futuro'
     fill_in 'Taxa de cobrança', with: '4,5%'
     fill_in 'Taxa máxima', with: '6%'
-    fill_in 'Code bank', with: '127'
-    fill_in 'Code pix', with: '7f44bab8b08a3fb07555'
+    fill_in 'Código do banco', with: '127'
+    fill_in 'Código Pix', with: '7f44bab8b08a3fb07555'
 
     logout
 
@@ -176,8 +176,8 @@ feature 'Admin manages Pix payment method' do
     fill_in 'Ícone', with: 'imagem no fut'
     fill_in 'Taxa de cobrança', with: '4,5%'
     fill_in 'Taxa máxima', with: '6%'
-    fill_in 'Code bank', with: '127'
-    fill_in 'Code pix', with: '7f44b8b08a3fb07555'
+    fill_in 'Código do banco', with: '127'
+    fill_in 'Código Pix', with: '7f44b8b08a3fb07555'
 
     logout
 
