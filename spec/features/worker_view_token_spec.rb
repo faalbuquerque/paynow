@@ -17,7 +17,7 @@ feature 'Worker view token' do
     click_on 'Minha empresa'
 
     expect(current_path).to eq(workers_company_path(worker))
-    expect(page).to have_content('Dados da Empresa')
+    expect(page).to have_content(company.corporate_name)
     expect(page).to have_content(company.token)
   end
 
