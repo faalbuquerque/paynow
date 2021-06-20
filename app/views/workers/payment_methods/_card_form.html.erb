@@ -1,0 +1,15 @@
+<% use_id_if_edit =  action_name == 'edit' ? "/#{payment_method.id}" : ''  %>
+<%= form_with model: payment_method, url: "#{workers_payment_methods_path}#{use_id_if_edit}" do |f| %>
+  <p>
+    <%= f.label :code  %>
+    <%= f.text_field :code %>
+  </p>
+
+  <p <%= action_name == 'edit' ? 'style=display:none;' : '' %> >
+    <%= collection_select(payment_method.class, :id, @payment_methods, :id, :name) %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

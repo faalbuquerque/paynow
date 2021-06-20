@@ -31,6 +31,7 @@ pt-BR:
       show:
         alter_token: Gerar novo token
         confirm_alter_token: Tem certeza disso?(Irreversivel!)
+        manage_payment_methods: Gerenciar metodos de pagamento
     accesses:
       show:
         block: Bloquear acesso
@@ -38,3 +39,21 @@ pt-BR:
     sessions:
       create:
         blocked: Sua conta está bloqueada!
+
+    payment_methods:
+      index:
+        payment_methods: Metodos de pagamento
+        add_billet_method: Adicionar Boleto
+        add_card_method: Adicionar Cartao de Crédito
+        add_pix_method: Adicionar Pix
+        edit: Editar
+      new:
+        add_payment_method: Adicionar metodo de pagamento
+      create:
+        added_payment: Metodo de pagamento adicionado!
+        error_payment_method: Erro ao criar methodo de pagamento!
+      edit:
+        edit_payment_method: Editar metodo de pagamento
+      update:
+        edited_payment: Metodo de pagamento atualizado!
+        error_payment_method: Não foi possivel atualizar!

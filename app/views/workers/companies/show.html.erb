@@ -5,6 +5,10 @@
 <hr>
 
 <p>
+  <%= link_to  t('.manage_payment_methods'), workers_payment_methods_path %>
+</p>
+
+<p>
   Token:
   <span id='company_token'>
     <%= @company.token %>
