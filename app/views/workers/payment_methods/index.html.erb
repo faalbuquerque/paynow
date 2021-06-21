@@ -10,7 +10,7 @@
   <p>
     <%= payment_method.name %> | 
     <%= t('.tax_charge') %>: <%= number_to_percentage(payment_method.tax_charge, precision: 2)  %> | 
-    <%= t('.tax_max') %>: <%= number_to_percentage(payment_method.tax_max, precision: 2)  %> | 
+    <%= t('.tax_max') %>: <%= number_to_currency(payment_method.tax_max, precision: 2)  %> | 
 
     <% if payment_method.class.to_s == 'BilletMethod' %>
 

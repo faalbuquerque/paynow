@@ -33,7 +33,7 @@ feature 'Worker configures payment methods' do
     expect(page).to have_text('Metodo de pagamento adicionado!')
     expect(page).to have_text('Boleto Itau')
     expect(page).to have_text('Taxa cobrança: 3,00%')
-    expect(page).to have_text('Taxa max: 4,00%')
+    expect(page).to have_text('Taxa max: R$ 4,00')
     expect(page).to have_text('Código do banco: 123')
     expect(page).to have_text('Agência: 123.456')
     expect(page).to have_text('Conta: 666')
@@ -67,7 +67,7 @@ feature 'Worker configures payment methods' do
     expect(page).to have_text('Metodo de pagamento adicionado!')
     expect(page).to have_text('Cartão Mast')
     expect(page).to have_text('Taxa cobrança: 3,00%')
-    expect(page).to have_text('Taxa max: 4,00%')
+    expect(page).to have_text('Taxa max: R$ 4,00')
     expect(page).to have_text('Código do banco: 123')
   end
 
@@ -100,7 +100,7 @@ feature 'Worker configures payment methods' do
     expect(page).to have_text('Metodo de pagamento adicionado!')
     expect(page).to have_text('Pix MP')
     expect(page).to have_text('Taxa cobrança: 3,00%')
-    expect(page).to have_text('Taxa max: 4,00%')
+    expect(page).to have_text('Taxa max: R$ 4,00')
     expect(page).to have_text('Código do banco: 123')
     expect(page).to have_text('Código Pix: a1s2d3f4g5h6')
   end
@@ -228,7 +228,7 @@ feature 'Worker configures payment methods' do
     expect(page).to have_text('Metodo de pagamento atualizado!')
     expect(page).to have_text('Boleto')
     expect(page).to have_text('Taxa cobrança: 3,00%')
-    expect(page).to have_text('Taxa max: 4,00%')
+    expect(page).to have_text('Taxa max: R$ 4,00')
     expect(page).to have_text('Código do banco: 1234')
     expect(page).to have_text('Agência: 1234.4567')
     expect(page).to have_text('Conta: 666777')
@@ -261,7 +261,7 @@ feature 'Worker configures payment methods' do
     expect(page).to have_text('Metodo de pagamento atualizado!')
     expect(page).to have_text('Cartão de credito')
     expect(page).to have_text('Taxa cobrança: 3,00%')
-    expect(page).to have_text('Taxa max: 4,00%')
+    expect(page).to have_text('Taxa max: R$ 4,00')
     expect(page).to have_text('Código do banco: 1235')
   end
 
@@ -293,7 +293,7 @@ feature 'Worker configures payment methods' do
     expect(page). to have_text('Metodo de pagamento atualizado!')
     expect(page). to have_text('Pix')
     expect(page). to have_text('Taxa cobrança: 3,00%')
-    expect(page). to have_text('Taxa max: 4,00%')
+    expect(page). to have_text('Taxa max: R$ 4,00')
     expect(page). to have_text('Código do banco: 789')
     expect(page). to have_text('Código Pix: f4g5h6')
   end
