@@ -4,6 +4,7 @@ class Company < ApplicationRecord
   has_many :pix_methods
   has_many :card_methods
   has_many :billet_methods
+  has_many :products
 
   validates :cnpj, presence: true
   validates :corporate_name, presence: true
@@ -33,4 +34,13 @@ class Company < ApplicationRecord
       client_company_token.update(token: self.token)
     end
   end
+
+  def payment_methods
+    billets = self.billet_methods
+    cards = self.card_methods
+    pixes = self.pix_methods
+
+    billets + cards + pixes
+  end
+
 end

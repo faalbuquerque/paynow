@@ -32,6 +32,7 @@ pt-BR:
         alter_token: Gerar novo token
         confirm_alter_token: Tem certeza disso?(Irreversivel!)
         manage_payment_methods: Gerenciar metodos de pagamento
+        products: Produtos
     accesses:
       show:
         block: Bloquear acesso
@@ -47,6 +48,14 @@ pt-BR:
         add_card_method: Adicionar Cartao de Crédito
         add_pix_method: Adicionar Pix
         edit: Editar
+        tax_max: Taxa max
+        tax_charge: Taxa cobrança
+        code_bank: Código do banco
+        agency_bank: Agência
+        account_number: Conta
+        code: Código do banco
+        code_pix: Código Pix
+        availabled: Disponibilidade
       new:
         add_payment_method: Adicionar metodo de pagamento
       create:

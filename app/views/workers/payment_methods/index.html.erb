@@ -9,19 +9,27 @@
 <% @payment_methods.each do |payment_method| %>
   <p>
     <%= payment_method.name %> | 
-    Taxa cobrança: <%= payment_method.tax_charge %>% | 
-    Taxa max: <%= payment_method.tax_max %>% | 
+    <%= t('.tax_charge') %>: <%= number_to_percentage(payment_method.tax_charge, precision: 2)  %> | 
+    <%= t('.tax_max') %>: <%= number_to_percentage(payment_method.tax_max, precision: 2)  %> | 
 
     <% if payment_method.class.to_s == 'BilletMethod' %>
-      Código do banco: <%= payment_method.code_bank %> | 
-      Agência: <%= payment_method.agency_bank %> | 
-      Conta: <%= payment_method.account_number %>
+
+      <%= t('.code') %>: <%= payment_method.code_bank %> | 
+      <%= t('.agency_bank') %>: <%= payment_method.agency_bank %> | 
+      <%= t('.account_number') %>: <%= payment_method.account_number %> | 
+
     <% elsif payment_method.class.to_s == 'CardMethod' %>
-      Código do banco: <%= payment_method.code %>
+
+      <%= t('.code') %>: <%= payment_method.code %> |
+
     <% elsif payment_method.class.to_s == 'PixMethod' %>
-      Código do banco: <%= payment_method.code_bank %> | 
-      Código Pix: <%= payment_method.code_pix %>
+
+     <%= t('.code') %>: <%= payment_method.code_bank %> | 
+     <%= t('.code_pix') %>: <%= payment_method.code_pix %> |
+
     <% end %>
+
+    <%= t('.availabled') %>: (<%= payment_method.available? ? '✔' : '✖' %>)
   </p>
 
   <%= link_to t('.edit'), edit_workers_payment_method_path({id: payment_method.id,
