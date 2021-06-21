@@ -1,0 +1,7 @@
+<p><%= link_to t('back'), products_path %></p>
+
+<h4><%= t('.edit_product') %></h4>
+
+<%= render 'shared/errors', object: @product %>
+
+<%= render 'form', product: @product %>

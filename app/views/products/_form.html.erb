@@ -1,0 +1,15 @@
+<%= form_with model: product, local: true do |f| %>
+  <p>
+    <%= f.label :product_name %>
+    <%= f.text_field :product_name %>
+  </p>
+
+  <p>
+    <%= f.label :product_price %>
+    <%= f.number_field :product_price, step: 0.01 %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

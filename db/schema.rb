@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_18_204957) do
+ActiveRecord::Schema.define(version: 2021_06_20_211206) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -96,6 +96,15 @@ ActiveRecord::Schema.define(version: 2021_06_18_204957) do
     t.index ["client_id"], name: "index_company_tokens_on_client_id"
   end
 
+  create_table "discounts", force: :cascade do |t|
+    t.decimal "amount", default: "0.0", null: false
+    t.string "payment_type", null: false
+    t.integer "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_discounts_on_product_id"
+  end
+
   create_table "pix_methods", force: :cascade do |t|
     t.string "name"
     t.string "icon"
@@ -108,6 +117,16 @@ ActiveRecord::Schema.define(version: 2021_06_18_204957) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_pix_methods_on_company_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "product_name"
+    t.string "product_price"
+    t.string "token"
+    t.integer "company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_products_on_company_id"
   end
 
   create_table "workers", force: :cascade do |t|
@@ -130,6 +149,8 @@ ActiveRecord::Schema.define(version: 2021_06_18_204957) do
   add_foreign_key "billing_addresses", "companies"
   add_foreign_key "card_methods", "companies"
   add_foreign_key "company_tokens", "clients"
+  add_foreign_key "discounts", "products"
   add_foreign_key "pix_methods", "companies"
+  add_foreign_key "products", "companies"
   add_foreign_key "workers", "companies"
 end

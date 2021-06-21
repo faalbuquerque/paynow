@@ -26,4 +26,7 @@ Rails.application.routes.draw do
   resources :pix_methods, only: %i[ index show new create edit update ]
   resources :card_methods, only: %i[ index show new create edit update ]
   resources :billet_methods, only: %i[ index show new create edit update  ]
+
+  resources :products, only: %i[ index new create show edit update]
+  resources :discounts, only: %i[ new create show]
 end

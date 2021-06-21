@@ -1,0 +1,31 @@
+pt-BR:
+  activerecord:
+    models:
+      product:
+        one: Produto
+        other: produtos
+    attributes:
+      product:
+        product_name: Nome
+        product_price: Preço
+  products:
+    index:
+      products: Produtos
+      add_product: Adicionar novo produto
+      edit_product: Editar Produto
+      tax_charge: Taxa cobrança
+    new:
+      add_product: Adicionar novo produto
+    create:
+      success: Produto adicionado com sucesso!
+    edit:
+      edit_product: Alterar Produto
+    update:
+      success: Produto alterado com sucesso!
+    show:
+      product: Produto
+      payment_method: Método de pagamento
+      discount: Desconto
+      price: Preço
+      no_discounts: Sem descontos cadastrados
+      add_discount: Adicionar desconto

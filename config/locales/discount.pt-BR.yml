@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      discount:
+        one: Desconto
+        other: Descontos
+    attributes:
+      discount:
+        amount: Desconto
+        payment_type: Tipos de Pagamento
+  discounts:
+    edit:
+      add_discount: Adicionar descontos

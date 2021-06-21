@@ -1,0 +1,16 @@
+<h4><%= t('.products') %></h4>
+
+<p>
+  <%= link_to  t('.add_product'), new_product_path %>
+</p>
+
+<% @products.each do |product| %>
+  <p>
+    <%= link_to product.product_name, product_path(product) %>
+  </p>
+
+  <p>
+    <%= link_to t('.edit_product'), edit_product_path(product) %>
+  </p>
+  <hr>
+<% end %>
