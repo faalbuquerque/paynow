@@ -80,13 +80,14 @@ Rota:  POST http://127.0.0.1:3000/api/v1/clients
 Input:
 
 {
-	"client": {
-	"name": "Ana",
-	"surname": "Sá",
-	"cpf": "129.640.270-30",
-  "company_token": "82f4c64d233829eacb11"
-  }
+  "client": {
+              "name": "Ana",
+              "surname": "Sá",
+              "cpf": "129.640.270-30",
+              "company_token": "82f4c64d233829eacb11"
+            }
 }
+
 
 Output em caso de sucesso:
 {
@@ -106,7 +107,7 @@ Output em caso de falha:
 #### Os funcionarios das empresas cadastradas podem adicionar cobranças de seus clientes utilizando o token da sua empresa, o token do produto envolvido na transação, o meio de pagamento escolhido e os dados do cliente final para emissão da cobrança.
 
 
-### Dados para adicionar cobranças separados por meios de pagamento:
+### Dados para adicionar cobranças separadas por meios de pagamento:
 
 ```
 Para Pix
@@ -181,19 +182,19 @@ Input:
 ```
 
 ```
-Output para todos os *inputs* em caso de sucesso:
+Output em caso de sucesso:
 
   {
-      message: "Cobrança gerada com sucesso!"
+    message: "Cobrança gerada com sucesso!"
   }
 
 ```
 
 ```
-Output para todos os *inputs* em caso de falha:
+Output em caso de falha:
 
   {
-      "message": "Dados inválidos"
+    "message": "Dados inválidos"
   }
 
 ```
