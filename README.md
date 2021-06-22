@@ -1,19 +1,16 @@
 <h2> Paynow - TreinaDev 06 - Etapa 1 </h2>
-<br>
 
 #### Este projeto consiste em desenvolver uma plataforma de pagamentos para gerenciar produtos, meios de pagamentos, cobranças e informações de clientes de empresas cadastradas.
-<br>
+
 
 #### O projeto foi desenvolvido utilizando Trello, [link aqui](https://trello.com/b/ZFZNSuCu/paynow)
 ---
-<br>
 
 ### Principais tecnologias Utilizadas:
 
 ✓ Ruby ✓ Rails ✓ Rspec ✓ Capybara ✓ Devise ✓ HTML ✓ CSS ✓
 
 ---
-<br>
 
 ## Executando o projeto:
 
@@ -47,8 +44,6 @@ Opcional, povoe o banco de dados com seeds, para testes
 rails db:seed
 ````
 
-<br>
-
 ### Dados para testes(Seeds):
 ```
 Para se logar como empresa administradora do sistema: Paynow
@@ -73,12 +68,9 @@ Login de funcionário da empresa: user_company@company.com
 
 ```
 
-<br>
-
 ## API
 
 #### Os funcionarios das empresas cadastradas devem adicionar seus clientes via API utilizando o token de suas empresas:
-<br>
 
 ### Dados para adicionar clientes:
 
@@ -113,7 +105,6 @@ Output em caso de falha:
 
 #### Os funcionarios das empresas cadastradas podem adicionar cobranças de seus clientes utilizando o token da sua empresa, o token do produto envolvido na transação, o meio de pagamento escolhido e os dados do cliente final para emissão da cobrança.
 
-<br>
 
 ### Dados para adicionar cobranças separados por meios de pagamento:
 
@@ -206,4 +197,3 @@ Output para todos os *inputs* em caso de falha:
   }
 
 ```
-
