@@ -47,14 +47,14 @@ describe 'End point for issuing billing - Pix' do
   context 'POST empty parameters' do
     it 'api/v1/pix_billings' do
 
-      post '/api/v1/clients', params: {}, headers: { 'Content-Type': 'application/json' }
+      post '/api/v1/pix_billings', params: {}, headers: { 'Content-Type': 'application/json' }
 
-      expect(response.body).to include("parâmetros inválidos")
+      expect(response.body).to include("Dados inválidos")
     end
   end
 
   context 'POST invalid parameters' do
-    it 'api/v1/pix_billings ' do
+    it '/api/v1/pix_billings' do
       company = Company.new(cnpj: '24.098.348/0001-21',
       corporate_name:'Company',
       billing_email: 'company@company.com')
@@ -75,15 +75,15 @@ describe 'End point for issuing billing - Pix' do
       product_ruby.save
 
       post '/api/v1/pix_billings', params: { pix_billing: {
-                    company_token: '',
-                    product_token: '',
-                    client_token: '',
-                    client_name: 'maria',
-                    client_surname: 'silva',
-                    client_cpf: '173.097.520-82',
-                    payment_method: ''
-                  }
-                }
+                                              company_token: '',
+                                              product_token: '',
+                                              client_token: '',
+                                              client_name: 'maria',
+                                              client_surname: 'silva',
+                                              client_cpf: '173.097.520-82',
+                                              payment_method: ''
+                                            }
+                                          }
 
       expect(response.body).to include("Dados inválidos")
     end
