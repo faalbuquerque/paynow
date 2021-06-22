@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_20_211206) do
+ActiveRecord::Schema.define(version: 2021_06_21_034747) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +23,30 @@ ActiveRecord::Schema.define(version: 2021_06_20_211206) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "billet_billings", force: :cascade do |t|
+    t.string "company_token"
+    t.string "product_token"
+    t.string "client_token"
+    t.string "client_name"
+    t.string "client_surname"
+    t.string "client_cpf"
+    t.string "payment_method"
+    t.string "zip_code"
+    t.string "state"
+    t.string "city"
+    t.string "street"
+    t.string "house_number"
+    t.string "complement"
+    t.decimal "product_original_price"
+    t.decimal "product_final_price"
+    t.decimal "payment_tax_billing"
+    t.decimal "payment_tax_max"
+    t.decimal "product_discont"
+    t.string "token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "billet_methods", force: :cascade do |t|
@@ -52,6 +76,27 @@ ActiveRecord::Schema.define(version: 2021_06_20_211206) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_billing_addresses_on_company_id"
+  end
+
+  create_table "card_billings", force: :cascade do |t|
+    t.string "company_token"
+    t.string "product_token"
+    t.string "client_token"
+    t.string "client_name"
+    t.string "client_surname"
+    t.string "client_cpf"
+    t.string "payment_method"
+    t.string "client_card_number"
+    t.string "client_card_name"
+    t.string "client_card_code"
+    t.decimal "product_original_price"
+    t.decimal "product_final_price"
+    t.decimal "payment_tax_billing"
+    t.decimal "payment_tax_max"
+    t.decimal "product_discont"
+    t.string "token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "card_methods", force: :cascade do |t|
@@ -103,6 +148,24 @@ ActiveRecord::Schema.define(version: 2021_06_20_211206) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_discounts_on_product_id"
+  end
+
+  create_table "pix_billings", force: :cascade do |t|
+    t.string "company_token"
+    t.string "product_token"
+    t.string "client_token"
+    t.string "client_name"
+    t.string "client_surname"
+    t.string "client_cpf"
+    t.string "payment_method"
+    t.decimal "product_original_price"
+    t.decimal "product_final_price"
+    t.decimal "payment_tax_billing"
+    t.decimal "payment_tax_max"
+    t.decimal "product_discont"
+    t.string "token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "pix_methods", force: :cascade do |t|

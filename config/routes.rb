@@ -17,16 +17,19 @@ Rails.application.routes.draw do
     put 'company/alter-token', to: 'companies#reset_token'
   end
 
-  namespace :api do
-    namespace :v1 do
-      resources :clients, only: %i[ index show create ]
-    end
-  end
-
   resources :pix_methods, only: %i[ index show new create edit update ]
   resources :card_methods, only: %i[ index show new create edit update ]
   resources :billet_methods, only: %i[ index show new create edit update  ]
 
   resources :products, only: %i[ index new create show edit update]
   resources :discounts, only: %i[ new create show]
+
+  namespace :api do
+    namespace :v1 do
+      resources :clients, only: %i[ index show create ]
+      resources :billet_billings, only: %i[ create ]
+      resources :card_billings, only: %i[ create ]
+      resources :pix_billings, only: %i[ create ]
+    end
+  end
 end

@@ -43,4 +43,7 @@ class Company < ApplicationRecord
     billets + cards + pixes
   end
 
+  def self.is_existent?(token)
+    !!Company.find_by(token: token)
+  end
 end

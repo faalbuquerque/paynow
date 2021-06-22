@@ -1,5 +1,4 @@
 class Api::V1::ClientsController < ActionController::API
-
   def  index
     @clients = Client.all
     render json: @clients.as_json(except: [:token, :id, :created_at, :updated_at])

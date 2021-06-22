@@ -10,4 +10,8 @@ class Product < ApplicationRecord
     product_hash = Digest::SHA256.hexdigest(input)[0..19]
     self.token = product_hash
   end
+
+  def self.is_existent?(token)
+    !!Product.find_by(token: token)
+  end
 end

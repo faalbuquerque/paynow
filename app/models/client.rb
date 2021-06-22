@@ -6,4 +6,8 @@ class Client < ApplicationRecord
     client_hash = Digest::SHA256.hexdigest(input)[0..19]
     self.token = client_hash
   end
+
+  def self.is_existent?(token)
+    !!Client.find_by(token: token)
+  end
 end
