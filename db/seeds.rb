@@ -25,10 +25,10 @@ company.workers.create!(email: 'user_block@company.com', password: '123456',
                         admin: false, status: 'block')
 
 puts 'Gerando Métodos de pagamento(@company)'
-billet = company.billet_methods
-                .create!(name: 'Boleto Itau', tax_charge: '2', tax_max: '3',
-                         code_bank:'222', agency_bank: '999',
-                         account_number:'127.4.3.222', available: true)
+billet = company.billet_methods.create!(name: 'Boleto Itau', tax_charge: '2',
+                                        code_bank:'222', agency_bank: '999',
+                                        account_number: '127.4.3.222',
+                                        tax_max: '3', available: true)
 
 card_method = company.card_methods.create!(name: 'Cartão Vis', tax_charge: '4',
                                            tax_max: '5', code:'333', available: true)
@@ -48,9 +48,9 @@ puts 'Gerando Produtos(@company)'
 product_ruby = company.products.new(product_name: 'Curso de ruby',
                                     product_price: '150')
 product_ruby.create_token
-product_ruby.save
+product_ruby.save!
 
 product_rails = company.products.new(product_name: 'Curso de rails',
                                      product_price: '210')
 product_rails.create_token
-product_rails.save
+product_rails.save!
