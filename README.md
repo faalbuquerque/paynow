@@ -118,13 +118,13 @@ Input:
 
   {
     pix_billing: {
-      company_token: "537feeacadd8f3623a50",
-      product_token: "0bd859a3a7a77c56880a",
-      client_token: "2b52d13ad6afeafb711c",
-      client_name: "maria",
-      client_surname: "silva",
-      client_cpf: "173.097.520-82",
-      payment_method: "Pix MP"
+      "company_token": "537feeacadd8f3623a50",
+      "product_token": "0bd859a3a7a77c56880a",
+      "client_token": "2b52d13ad6afeafb711c",
+      "client_name": "maria",
+      "client_surname": "silva",
+      "client_cpf": "173.097.520-82",
+      "payment_method": "Pix MP"
     }
   }
 
@@ -132,33 +132,32 @@ Input:
 
 ```
 Para Boleto(em desenvolvimento)
-
 Rota: POST http://127.0.0.1:3000/api/v1/pix_billings
 
 Input:
 
   {
     billet_billing: {
-      company_token: "537feeacadd8f3623a50",
-      product_token: "0bd859a3a7a77c56880a",
-      client_token: "2b52d13ad6afeafb711c",
-      client_name: "maria",
-      client_surname: "silva",
-      client_cpf: "173.097.520-82",
-      payment_method: "Boleto Itau",
-      zip_code: "13214701",
-      state: "sp",
-      city: "sao paulo",
-      street: "Rua Uva Isabel",
-      house_number: "123",
-      complement: "casa"
+      "company_token": "537feeacadd8f3623a50",
+      "product_token": "0bd859a3a7a77c56880a",
+      "client_token": "2b52d13ad6afeafb711c",
+      "client_name": "maria",
+      "client_surname": "silva",
+      "client_cpf": "173.097.520-82",
+      "payment_method": "Boleto Itau",
+      "zip_code": "13214701",
+      "state": "sp",
+      "city": "sao paulo",
+      "street": "Rua Uva Isabel",
+      "house_number": "123",
+      "complement": "casa"
     }
   }
 
 ```
 
 ```
-Para cartão de crédito(em desenvolvimento)
+Para cartão de crédito
 
 Rota: POST http://127.0.0.1:3000/api/v1/card_billings
 
@@ -166,16 +165,16 @@ Input:
 
   {
     card_billing: {
-      company_token: "537feeacadd8f3623a50",
-      product_token: "0bd859a3a7a77c56880a",
-      client_token: "2b52d13ad6afeafb711c",
-      client_name: "maria",
-      client_surname: "silva",
-      client_cpf: "173.097.520-82",
-      payment_method: "Cartão Vis",
-      client_card_number: "5237827889175873",
-      client_card_name: "maria s",
-      client_card_code: "969"
+      "company_token": "537feeacadd8f3623a50",
+      "product_token": "0bd859a3a7a77c56880a",
+      "client_token": "2b52d13ad6afeafb711c",
+      "client_name": "maria",
+      "client_surname": "silva",
+      "client_cpf": "173.097.520-82",
+      "payment_method": "Cartão Vis",
+      "client_card_number": "5237827889175873",
+      "client_card_name": "maria s",
+      "client_card_code": "969"
     }
   }
 
@@ -185,7 +184,7 @@ Input:
 Output em caso de sucesso:
 
   {
-    message: "Cobrança gerada com sucesso!"
+    "message": "Cobrança gerada com sucesso!"
   }
 
 ```
