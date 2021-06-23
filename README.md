@@ -131,7 +131,7 @@ Input:
 ```
 
 ```
-Para Boleto(em desenvolvimento)
+Para Boleto
 Rota: POST http://127.0.0.1:3000/api/v1/pix_billings
 
 Input:
