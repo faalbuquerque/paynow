@@ -84,7 +84,7 @@ Input:
               "name": "Ana",
               "surname": "Sá",
               "cpf": "129.640.270-30",
-              "company_token": "82f4c64d233829eacb11"
+              "company_token": "a94f3afac6f28848783f"
             }
 }
 
@@ -117,10 +117,10 @@ Rota: POST http://127.0.0.1:3000/api/v1/pix_billings
 Input:
 
   {
-    pix_billing: {
-      "company_token": "537feeacadd8f3623a50",
-      "product_token": "0bd859a3a7a77c56880a",
-      "client_token": "2b52d13ad6afeafb711c",
+    "pix_billing": {
+      "company_token": "a94f3afac6f28848783f",
+      "product_token": "16ab79eb59f06a07b08e",
+      "client_token": "e7bda828ea1d64cf1a54",
       "client_name": "maria",
       "client_surname": "silva",
       "client_cpf": "173.097.520-82",
@@ -132,15 +132,15 @@ Input:
 
 ```
 Para Boleto
-Rota: POST http://127.0.0.1:3000/api/v1/pix_billings
+Rota: POST http://127.0.0.1:3000/api/v1/billet_billings
 
 Input:
 
   {
-    billet_billing: {
-      "company_token": "537feeacadd8f3623a50",
-      "product_token": "0bd859a3a7a77c56880a",
-      "client_token": "2b52d13ad6afeafb711c",
+    "billet_billing": {
+      "company_token": "a94f3afac6f28848783f",
+      "product_token": "16ab79eb59f06a07b08e",
+      "client_token": "e7bda828ea1d64cf1a54",
       "client_name": "maria",
       "client_surname": "silva",
       "client_cpf": "173.097.520-82",
@@ -164,10 +164,10 @@ Rota: POST http://127.0.0.1:3000/api/v1/card_billings
 Input:
 
   {
-    card_billing: {
-      "company_token": "537feeacadd8f3623a50",
-      "product_token": "0bd859a3a7a77c56880a",
-      "client_token": "2b52d13ad6afeafb711c",
+    "card_billing": {
+      "company_token": "a94f3afac6f28848783f",
+      "product_token": "16ab79eb59f06a07b08e",
+      "client_token": "e7bda828ea1d64cf1a54",
       "client_name": "maria",
       "client_surname": "silva",
       "client_cpf": "173.097.520-82",
@@ -185,6 +185,7 @@ Output em caso de sucesso:
 
   {
     "message": "Cobrança gerada com sucesso!"
+    "token: "...aqui token da cobranca gerada..."
   }
 
 ```
