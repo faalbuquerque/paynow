@@ -9,11 +9,10 @@ joao = Admin.create!(admin_name: 'Joao', email: 'joao_admin@paynow.com',
                      password: '123456', password_confirmation: '123456')
 
 puts 'Gerando Usuários do sistema(@company.com)'
-company = Company.new(cnpj: '24.098.348/0001-21',
-                      corporate_name:'First company',
-                      billing_email: 'company@company.com')
-company.create_token
-company.save!
+company = Company.create!(cnpj: '24.098.348/0001-21',
+                          corporate_name:'First company',
+                          billing_email: 'company@company.com',
+                          token: 'a94f3afac6f28848783f')
 
 company.workers.create!(email: 'admin_company@company.com', password: '123456',
                         admin: true)
@@ -45,12 +44,14 @@ pix_method = company.pix_methods.create!(name: 'Pix WóL', tax_charge: '10',
                                          code_pix: '111', available: false)
 
 puts 'Gerando Produtos(@company)'
-product_ruby = company.products.new(product_name: 'Curso de ruby',
-                                    product_price: '150')
-product_ruby.create_token
-product_ruby.save!
+product_ruby = company.products.create!(product_name: 'Curso de ruby',
+                                    product_price: '150',
+                                    token: '16ab79eb59f06a07b08e')
 
-product_rails = company.products.new(product_name: 'Curso de rails',
-                                     product_price: '210')
-product_rails.create_token
-product_rails.save!
+product_rails = company.products.create!(product_name: 'Curso de rails',
+                                     product_price: '210',
+                                     token: '9d04efe4dc40e059c4c9')
+
+puts 'Gerando Client'
+client = Client.create!(name: 'Ana', surname: 'Souza', cpf: '333.333.333-50',
+                        token: 'e7bda828ea1d64cf1a54')
