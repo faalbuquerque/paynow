@@ -62,3 +62,6 @@ pt-BR:
       not_saved:
         one: "Não foi possível salvar %{resource}: 1 erro"
         other: "Não foi possível salvar %{resource}: %{count} erros."
+  sign_up: Novo aqui? Cadastre-se
+  forgot_your_password: Esqueceu sua senha?
+  log_in: Entre no sistema

@@ -5,6 +5,8 @@ ruby '3.0.0'
 gem 'devise'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 
+gem 'bootstrap-sass'
+
 gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'

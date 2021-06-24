@@ -1,32 +1,34 @@
-<p><%= link_to t('back'), admins_manages_path %></p>
+<div class="container">
+  <p><%= link_to t('back'), admins_manages_path, class:"btn btn-outline-primary" %></p>
+  <br>
+  <h3><%= t('.card_method') %></h3>
+  <br>
+  <p><%= link_to t('.add'), new_card_method_path, class:"btn btn-outline-primary" %></p>
 
-<h3><%= t('.card_method') %></h3>
+  <% @card_methods.each do |card_method| %>
+    <p>
+      <%= link_to card_method.name, card_method_path(card_method) %>
+    </p>
 
-<p><%= link_to t('.add'), new_card_method_path %></p>
+    <p>
+      <%= card_method.tax_charge %>
+    </p>
 
-<% @card_methods.each do |card_method| %>
-  <p>
-    <%= link_to card_method.name, card_method_path(card_method) %>
-  </p>
+    <p>
+      <%= card_method.tax_max %>
+    </p>
 
-  <p>
-    <%= card_method.tax_charge %>
-  </p>
+    <p>
+      <%= card_method.code %>
+    </p>
 
-  <p>
-    <%= card_method.tax_max %>
-  </p>
+    <p>
+      <%= card_method.available? ? t('.available') : t('.unavailable') %>
+    </p>
 
-  <p>
-    <%= card_method.code %>
-  </p>
-
-  <p>
-    <%= card_method.available? ? t('.available') : t('.unavailable') %>
-  </p>
-
-  <p>
-    <%= link_to  t('.edit'), edit_card_method_path(card_method) %>
-  </p>
-  <hr>
-<% end %>
+    <p>
+      <%= link_to  t('.edit'), edit_card_method_path(card_method), class:"btn btn-outline-primary" %>
+    </p>
+    <hr>
+  <% end %>
+</div>

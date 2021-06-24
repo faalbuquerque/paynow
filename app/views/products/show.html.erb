@@ -1,35 +1,38 @@
-<p><%= link_to t('back'), products_path %></p>
+<div class="container">
 
-<h4><%= t('.product') %></h4>
-<hr>
+  <h3><%= t('.product') %></h3>
 
-<% if @product.discounts.any? %>
-  <% @product.discounts.each do |discount| %>
-    <p>
-      <%= t('.payment_method') %>: <%= discount.payment_type %>
-    </p>
-    <p>
-      <%= t('.discount') %>: <%= number_to_percentage(discount.amount, precision: 2)  %>
-    </p>
-    <hr>
+  <h4>
+    <%= @product.product_name %>
+  </h4>
+
+  <p>
+    <%= t('.price') %>: 
+    <%= number_to_currency(@product.product_price, unit: "R$", separator: ",", delimiter: ".", format: "%n %u")%>
+  </p>
+
+  <p>
+    Token: <%= @product.token %>
+  </p>
+
+  <p>
+    <%= link_to t('.add_discount'), new_discount_path({ id: @product.id }), class:"btn btn-outline-success" %>
+  </p>
+
+  <% if @product.discounts.any? %>
+    <% @product.discounts.each do |discount| %>
+      <p>
+        <%= t('.payment_method') %>: <%= discount.payment_type %>
+      </p>
+      <p>
+        <%= t('.discount') %>: <%= number_to_percentage(discount.amount, precision: 2) %>
+      </p>
+    <% end %>
+  <% else %>
+      <%= t('.no_discounts')%>
   <% end %>
-<% else %>
-    <%= t('.no_discounts')%>
-<% end %>
 
-<p>
-  <%= link_to t('.add_discount'), new_discount_path({ id: @product.id }) %>
-</p>
-
-<p>
-  <%= @product.product_name %>
-</p>
-
-<p>
-  <%= t('.price') %>: 
-  <%= number_to_currency(@product.product_price, unit: "R$", separator: ",", delimiter: ".", format: "%n %u")%>
-</p>
-
-<p>
-  Token: <%= @product.token %>
-</p>
+  <p>
+    <%= link_to t('back'), products_path, class:"btn btn-outline-primary" %>
+  </p>
+</div>

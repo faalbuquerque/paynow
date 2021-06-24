@@ -1,15 +1,17 @@
-<%= form_with model: product, local: true do |f| %>
-  <p>
-    <%= f.label :product_name %>
-    <%= f.text_field :product_name %>
-  </p>
+<div class="container">
+  <%= form_with model: product, local: true do |f| %>
+    <p>
+      <%= f.label :product_name %>
+      <%= f.text_field :product_name, class:"form-control" %>
+    </p>
 
-  <p>
-    <%= f.label :product_price %>
-    <%= f.number_field :product_price, step: 0.01 %>
-  </p>
+    <p>
+      <%= f.label :product_price %>
+      <%= f.number_field :product_price, step: 0.01, class:"form-control" %>
+    </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+    <p>
+      <%= f.submit class:"btn btn-outline-primary" %>
+    </p>
+  <% end %>
+</div>

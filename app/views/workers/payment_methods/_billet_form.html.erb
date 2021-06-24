@@ -1,25 +1,27 @@
-<% use_id_if_edit =  action_name == 'edit' ? "/#{payment_method.id}" : ''  %>
-<%= form_with model: payment_method, url: "#{workers_payment_methods_path}#{use_id_if_edit}" do |f| %>
-  <p>
-    <%= f.label :code_bank %>
-    <%= f.text_field :code_bank %>
-  </p>
+<div class="container"> 
+  <% use_id_if_edit =  action_name == 'edit' ? "/#{payment_method.id}" : ''  %>
+  <%= form_with model: payment_method, url: "#{workers_payment_methods_path}#{use_id_if_edit}" do |f| %>
+    <p>
+      <%= f.label :code_bank %>
+      <%= f.text_field :code_bank, class:"form-control" %>
+    </p>
 
-  <p>
-    <%= f.label :agency_bank %>
-    <%= f.text_field :agency_bank %>
-  </p>
+    <p>
+      <%= f.label :agency_bank %>
+      <%= f.text_field :agency_bank, class:"form-control" %>
+    </p>
 
-  <p>
-    <%= f.label :account_number %>
-    <%= f.text_field :account_number %>
-  </p>
+    <p>
+      <%= f.label :account_number %>
+      <%= f.text_field :account_number, class:"form-control" %>
+    </p>
 
-  <p <%= action_name == 'edit' ? 'style=display:none;' : '' %> >
-    <%= collection_select( payment_method.class, :id, @payment_methods, :id, :name) %>
-  </p>
+    <p <%= action_name == 'edit' ? 'style=display:none;' : '' %> >
+      <%= collection_select( payment_method.class, :id, @payment_methods, :id, :name) %>
+    </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+    <p>
+      <%= f.submit class:"btn btn-outline-primary" %>
+    </p>
+  <% end %>
+</div>

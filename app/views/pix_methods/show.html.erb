@@ -1,31 +1,35 @@
-<p><%= link_to t('back'), pix_methods_path %></p>
+<div class="container">
+  <p>
+    <%= link_to t('back'), pix_methods_path, class:"btn btn-outline-primary" %>
+  </p>
 
-<h3><%= t('.details')%></h3>
+  <h3><%= t('.details')%></h3>
 
-<p>
-  <%= @pix_method.name %>
-</p>
+  <p>
+    <%= @pix_method.name %>
+  </p>
 
-<p>
-  <%= @pix_method.icon %>
-</p>
+  <p>
+    <%= @pix_method.icon %>
+  </p>
 
-<p>
-  <%= @pix_method.tax_charge %>
-</p>
+  <p>
+    <%= @pix_method.tax_charge %>
+  </p>
 
-<p>
-  <%= @pix_method.tax_max %>
-</p>
+  <p>
+    <%= @pix_method.tax_max %>
+  </p>
 
-<p>
-  <%= @pix_method.code_bank %>
-</p>
+  <p>
+    <%= @pix_method.code_bank %>
+  </p>
 
-<p>
-  <%= @pix_method.code_pix %>
-</p>
+  <p>
+    <%= @pix_method.code_pix %>
+  </p>
 
-<p>
-  <%= @pix_method.available? ? t('.available') : t('.unavailable') %>
-</p>
+  <p>
+    <%= @pix_method.available? ? t('.available') : t('.unavailable') %>
+  </p>
+</div>

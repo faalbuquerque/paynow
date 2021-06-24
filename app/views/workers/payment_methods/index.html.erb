@@ -1,40 +1,46 @@
-<h3><%= t('.payment_methods') %></h3>
-
-<p>
-  <%= link_to  t('.add_billet_method'), new_workers_payment_method_path({type: 'billet'}) %> | 
-  <%= link_to  t('.add_card_method'), new_workers_payment_method_path({type: 'card'}) %> | 
-  <%= link_to  t('.add_pix_method'), new_workers_payment_method_path({type: 'pix'}) %>
-</p>
-
-<% @payment_methods.each do |payment_method| %>
+<div class="container">
   <p>
-    <%= payment_method.name %> | 
-    <%= t('.tax_charge') %>: <%= number_to_percentage(payment_method.tax_charge, precision: 2)  %> | 
-    <%= t('.tax_max') %>: <%= number_to_currency(payment_method.tax_max, precision: 2)  %> | 
-
-    <% if payment_method.class.to_s == 'BilletMethod' %>
-
-      <%= t('.code') %>: <%= payment_method.code_bank %> | 
-      <%= t('.agency_bank') %>: <%= payment_method.agency_bank %> | 
-      <%= t('.account_number') %>: <%= payment_method.account_number %> | 
-
-    <% elsif payment_method.class.to_s == 'CardMethod' %>
-
-      <%= t('.code') %>: <%= payment_method.code %> |
-
-    <% elsif payment_method.class.to_s == 'PixMethod' %>
-
-     <%= t('.code') %>: <%= payment_method.code_bank %> | 
-     <%= t('.code_pix') %>: <%= payment_method.code_pix %> |
-
-    <% end %>
-
-    <%= t('.availabled') %>: (<%= payment_method.available? ? '✔' : '✖' %>)
+    <%= link_to t('back'), root_path, class:"btn btn-outline-primary" %>
   </p>
 
-  <%= link_to t('.edit'), edit_workers_payment_method_path({id: payment_method.id,
-                                                            type: payment_method.class
-                                                            .to_s.downcase
-                                                            .delete_suffix('method')}) %>
-  <hr>
-<% end %>
+  <h3><%= t('.payment_methods') %></h3>
+  <br>
+  <p>
+    <%= link_to  t('.add_billet_method'), new_workers_payment_method_path({type: 'billet'}), class:"btn btn-outline-success" %>
+    <%= link_to  t('.add_card_method'), new_workers_payment_method_path({type: 'card'}), class:"btn btn-outline-success" %>
+    <%= link_to  t('.add_pix_method'), new_workers_payment_method_path({type: 'pix'}), class:"btn btn-outline-success" %>
+  </p>
+  <br>
+  <% @payment_methods.each do |payment_method| %>
+    <p>
+      <%= payment_method.name %> | 
+      <%= t('.tax_charge') %>: <%= number_to_percentage(payment_method.tax_charge, precision: 2)  %> | 
+      <%= t('.tax_max') %>: <%= number_to_currency(payment_method.tax_max, precision: 2)  %> | 
+
+      <% if payment_method.class.to_s == 'BilletMethod' %>
+
+        <%= t('.code') %>: <%= payment_method.code_bank %> | 
+        <%= t('.agency_bank') %>: <%= payment_method.agency_bank %> | 
+        <%= t('.account_number') %>: <%= payment_method.account_number %> | 
+
+      <% elsif payment_method.class.to_s == 'CardMethod' %>
+
+        <%= t('.code') %>: <%= payment_method.code %> |
+
+      <% elsif payment_method.class.to_s == 'PixMethod' %>
+
+      <%= t('.code') %>: <%= payment_method.code_bank %> | 
+      <%= t('.code_pix') %>: <%= payment_method.code_pix %> |
+
+      <% end %>
+
+      <%= t('.availabled') %>: (<%= payment_method.available? ? '✔' : '✖' %>)
+    </p>
+
+    <%= link_to t('.edit'), edit_workers_payment_method_path({id: payment_method.id,
+                                                              type: payment_method.class
+                                                              .to_s.downcase
+                                                              .delete_suffix('method')}), class:"btn btn-outline-primary" %>
+    <hr>
+  <% end %>
+</div>

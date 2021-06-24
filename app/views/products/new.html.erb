@@ -1,7 +1,11 @@
-<p><%= link_to t('back'), products_path %></p>
+<div class="container">
 
-<h4><%= t('.add_product') %></h4>
+  <p><%= link_to t('back'), products_path, class:"btn btn-outline-primary"%></p>
 
-<%= render 'shared/errors', object: @product %>
+  <h4><%= t('.add_product') %></h4>
 
-<%= render 'form', product: @product %>
+  <%= render 'shared/errors', object: @product %>
+
+  <%= render 'form', product: @product %>
+
+</div>

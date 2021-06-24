@@ -9,5 +9,6 @@ pt-BR:
         amount: Desconto
         payment_type: Tipos de Pagamento
   discounts:
-    edit:
-      add_discount: Adicionar descontos
+    new:
+      add_discount: Adicionar desconto
+  discount: Desconto

@@ -1,23 +1,29 @@
-<h3><%= t('manage_worker') %></h3>
-<hr>
+ <div class="container"> 
 
-<% @workers.each do |worker| %>
-  <p>
-    <%= worker.email %>
-  </p>
-
-  <p>
-    Status: <%= worker.status %>
-  </p>
-
-  <% if current_worker.admin? %>
-
-    <% if worker.status.eql?("block") %>
-      <%= link_to t('.unblock'), workers_access_path(worker), method: :put %>
-    <% else %>
-      <%= link_to t('.block'), workers_access_path(worker), method: :put %>
-    <% end %>
-
-  <% end %>
+  <h3><%= t('manage_worker') %></h3>
   <hr>
-<% end %>
+  <div class="acesses_show">
+    <% @workers.each do |worker| %>
+        <p>
+          <%= worker.email %>
+        </p>
+
+        <p>
+          Status: <%= worker.status %>
+        </p>
+
+        <% if current_worker.admin? %>
+          <div style="display: flex; flex-direction: column; align-items: center">
+
+            <% if worker.status.eql?("block") %>
+              <%= link_to t('.unblock'), workers_access_path(worker), method: :put, class:"btn btn-outline-success" %>
+            <% else %>
+              <%= link_to t('.block'), workers_access_path(worker), method: :put, class:"btn btn-outline-danger" %>
+            <% end %>
+
+          </div>
+        <% end %>
+        <hr>
+    <% end %>
+  </div>
+</div>

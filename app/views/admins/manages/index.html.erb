@@ -1,16 +1,21 @@
-<h2>Admin Dashboard</h2>
-<hr>
+ <div class="container"> 
+  <h2>Admin Dashboard</h2>
 
-<h4><%= t('payment_methods') %></h4>
+  <br>
 
-<p>
-  <%= link_to  t('.pix_methods'), pix_methods_path %>
-</p>
+  <h4><%= t('payment_methods') %></h4>
 
-<p>
-  <%= link_to  t('.card_methods'), card_methods_path %>
-</p>
+  <br>
 
-<p>
-  <%= link_to  t('.billet_methods'), billet_methods_path %>
-</p>
+  <p>
+    <%= link_to  t('.pix_methods'), pix_methods_path, class:"btn btn-outline-secondary" %>
+  </p>
+
+  <p>
+    <%= link_to  t('.card_methods'), card_methods_path, class:"btn btn-outline-secondary" %>
+  </p>
+
+  <p>
+    <%= link_to  t('.billet_methods'), billet_methods_path, class:"btn btn-outline-secondary" %>
+  </p>
+</div>

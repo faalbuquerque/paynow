@@ -1,40 +1,42 @@
-<p><%= link_to t('back'), admins_manages_path %></p>
+<div class="container">
+  <p><%= link_to t('back'), admins_manages_path, class:"btn btn-outline-primary" %></p>
+  <br>
+  <h3><%= t('.billet_method') %></h3>
+  <br>
+  <p><%= link_to t('.add'), new_billet_method_path, class:"btn btn-outline-primary" %></p>
 
-<h3><%= t('.billet_method') %></h3>
+  <% @billet_methods.each do |billet_method| %>
+    <p>
+      <%= link_to billet_method.name, billet_method_path(billet_method) %>
+    </p>
 
-<p><%= link_to t('.add'), new_billet_method_path %></p>
+    <p>
+      <%= billet_method.tax_charge %>
+    </p>
 
-<% @billet_methods.each do |billet_method| %>
-  <p>
-    <%= link_to billet_method.name, billet_method_path(billet_method) %>
-  </p>
+    <p>
+      <%= billet_method.tax_max %>
+    </p>
 
-  <p>
-    <%= billet_method.tax_charge %>
-  </p>
+    <p>
+      <%= billet_method.code_bank %>
+    </p>
 
-  <p>
-    <%= billet_method.tax_max %>
-  </p>
+    <p>
+      <%= billet_method.agency_bank %>
+    </p>
 
-  <p>
-    <%= billet_method.code_bank %>
-  </p>
+    <p>
+      <%= billet_method.account_number %>
+    </p>
 
-  <p>
-    <%= billet_method.agency_bank %>
-  </p>
+    <p>
+      <%= billet_method.available? ? t('.available') : t('.unavailable') %>
+    </p>
 
-  <p>
-    <%= billet_method.account_number %>
-  </p>
-
-  <p>
-    <%= billet_method.available? ? t('.available') : t('.unavailable') %>
-  </p>
-
-  <p>
-    <%= link_to  t('.edit'), edit_billet_method_path(billet_method) %>
-  </p>
-  <hr>
-<% end %>
+    <p>
+      <%= link_to  t('.edit'), edit_billet_method_path(billet_method),class:"btn btn-outline-primary" %>
+    </p>
+    <hr>
+  <% end %>
+</div>

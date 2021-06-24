@@ -2,3 +2,4 @@ pt-BR:
   register: Faça seu cadastro
   login_account: Faça login
   logout: Sair
+  welcome: Bem vindo ao seu sistema de pagamentos

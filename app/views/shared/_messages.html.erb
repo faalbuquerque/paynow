@@ -1,7 +1,12 @@
-<% if notice %>
-  <p><%= notice %></p>
-<% end %>
 
-<% if alert %>
-  <p><%= alert %></p>
-<% end %>
+<div class="custom_notice">
+  <% if notice %>
+    <p class="custom_message_notice"><%= notice %></p>
+  <% end %>
+</div>
+
+<div class="custom_alert">
+  <% if alert %>
+    <p class="custom_message_alert"><%= alert %></p>
+  <% end %>
+</div>

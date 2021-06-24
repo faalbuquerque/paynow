@@ -1,7 +1,12 @@
-<%= render "workers/shared/error_messages", resource: @payment_method %>
+<div class="container">
 
-<h4><%= t('.edit_payment_method') %></h4>
+  <%= link_to  t('back'), workers_payment_methods_path, class:"btn btn-outline-primary" %>
+  <br>
+  <%= render "workers/shared/error_messages", resource: @payment_method %>
 
-<%= link_to  t('back'), workers_payment_methods_path %>
+  <h4><%= t('.edit_payment_method') %></h4>
+  <br>
 
-<%= render "#{params[:type]}_form", payment_method: @payment_method %>
+  <%= render "#{params[:type]}_form", payment_method: @payment_method %>
+
+</div>

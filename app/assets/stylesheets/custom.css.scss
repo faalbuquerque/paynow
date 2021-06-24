@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+html a{
+  text-decoration: none;
+  color:black
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #8A2BE2;
+  text-shadow: 0 3px 3px black;
+}
+
+.title_home a{
+  margin: 1%;
+  font-size: 35px;
+  color: white;
+}
+
+.title_home a:hover {
+  color: #D8BFD8;
+}
+
+.header{
+  padding: 1%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 2%;
+}
+
+.header a:hover{
+  font-size: 102%;
+}
+
+.welcome{
+  padding: 1%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 2%;
+  font-size: 30px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: column;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn_back{
+  align-self: center;
+}
+
+.custom_alert{
+  background-color: var(--paynow_alert_background);
+  color: var(--paynow_alert_text);
+}
+.custom_alert p{
+  color: var(--paynow_alert_text);
+  text-shadow: 0 3px 3px black;
+}
+.custom_notice {
+  background-color: var(--paynow_notice_background);
+  color: var(--codeplay_notice_text);
+}
+.custom_notice p{
+  color: var(--paynow_notice_text);
+  text-shadow: 0 2px 2px black;
+}
+
+.custom_message_alert {
+  padding: 6px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.custom_message_notice {
+  padding: 6px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.acesses_show{
+  background-color: rgb(216, 201, 230);
+  padding: 8%;
+  margin-bottom: 3%;
+  border-radius: 5px;
+}

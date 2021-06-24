@@ -1,25 +1,29 @@
-<%= render "workers/shared/error_messages", resource: @discount %>
-
-<p><%= link_to t('back'), product_path(@product) %></p>
-
-<h4><%= t('.add_discount') %></h4>
-
-<%= form_with model: @discount, local: true do |f| %>
+<div class="container">
   <p>
-    <%= f.label :amount %>
-    <%= f.text_field :amount %>
+    <%= link_to t('back'), product_path(@product), class:"btn btn-outline-primary" %>
   </p>
 
-  <p>
-    <%= f.label :payment_type %>
-    <%= f.select :payment_type, @payment_methods %>
-  </p>
+  <%= render "workers/shared/error_messages", resource: @discount %>
+  <br>
+  <h4><%= t('.add_discount') %></h4>
+  <br>
+  <%= form_with model: @discount, local: true do |f| %>
+    <p>
+      <%= f.label :amount %>
+      <%= f.text_field :amount, class:"form-control" %>
+    </p>
 
-  <p>
-    <%= f.hidden_field :id, value: @product.id %>
-  </p>
+    <p>
+      <%= f.label :payment_type %>
+      <%= f.select :payment_type, @payment_methods, class:"btn btn-outline-success" %>
+    </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+    <p>
+      <%= f.hidden_field :id, value: @product.id %>
+    </p>
+
+    <p>
+      <%= f.submit class:"btn btn-outline-success" %>
+    </p>
+  <% end %>
+</div>

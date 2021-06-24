@@ -1,16 +1,20 @@
-<h4><%= t('.products') %></h4>
-
-<p>
-  <%= link_to  t('.add_product'), new_product_path %>
-</p>
-
-<% @products.each do |product| %>
+ <div class="container"> 
+  <h4><%= t('.products') %></h4>
+  <br>
   <p>
-    <%= link_to product.product_name, product_path(product) %>
+    <%= link_to  t('.add_product'), new_product_path, class:"btn btn-outline-primary" %>
   </p>
 
-  <p>
-    <%= link_to t('.edit_product'), edit_product_path(product) %>
-  </p>
-  <hr>
-<% end %>
+  <div class="acesses_show">
+    <% @products.each do |product| %>
+      <p>
+        <%= link_to product.product_name, product_path(product), class:"btn btn-outline-dark" %>
+      </p>
+
+      <p style="text-align:center">
+        <%= link_to t('.edit_product'), edit_product_path(product), class:"btn btn-outline-dark" %>
+      </p>
+      <hr>
+    <% end %>
+  </div>
+</div>

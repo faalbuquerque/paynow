@@ -1,27 +1,35 @@
+<div class="container">
+  <h4>
+    <%= @company.corporate_name %>
+  </h4>
+  <br>
+  <h5>
+    <div style="display: flex; flex-direction: column; align-items: center">
+      <p>
+        <%= link_to  t('.manage_payment_methods'), workers_payment_methods_path, class: "btn btn-outline-primary" %>
+      </p>
+      <p>
+        <%= link_to  t('.products'), products_path, class: "btn btn-outline-primary" %>
+      </p>
+    </div>
+  </h5>
 
-<h4>
-  <%= @company.corporate_name %>
-</h4>
-<hr>
+  <p>
+    CNPJ: <%= @company.cnpj %>
+  </p>
 
-<p>
-  <%= link_to  t('.manage_payment_methods'), workers_payment_methods_path %> | 
-  <%= link_to  t('.products'), products_path %>
-</p>
+  <p>
+    Token:
+    <span id='company_token'>
+      <%= @company.token %>
+    </span>
 
-<p>
-  Token:
-  <span id='company_token'>
-    <%= @company.token %>
-  </span>
+    <% if current_worker.admin? %>
+      <%= button_to t('.alter_token'), workers_company_alter_token_path,
+                                      remote: true, method: :put,
+                                      data: { confirm: t('.confirm_alter_token')},
+                                      class:"btn btn-danger" %>
+    <% end %>
+  </p>
 
-  <% if current_worker.admin? %>
-    <%= button_to t('.alter_token'), workers_company_alter_token_path,
-                                     remote: true, method: :put,
-                                     data: { confirm: t('.confirm_alter_token') } %>
-  <% end %>
-</p>
-
-<p>
-  CNPJ: <%= @company.cnpj %>
-</p>
+</div>

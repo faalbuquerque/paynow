@@ -1,7 +1,11 @@
-<p><%= link_to t('back'), billet_methods_path %></p>
+<div class="container">
+  <p>
+    <%= link_to t('back'), billet_methods_path, class:"btn btn-outline-primary" %>
+  </p>
 
-<h3><%= t('.add_new_billet') %></h3>
+  <h3><%= t('.add_new_billet') %></h3>
 
-<%= render 'shared/errors', object: @billet_method %>
+  <%= render 'shared/errors', object: @billet_method %>
+  <%= render 'form', billet_method: @billet_method %>
 
-<%= render 'form', billet_method: @billet_method %>
+</div>
