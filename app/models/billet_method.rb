@@ -7,6 +7,7 @@ class BilletMethod < ApplicationRecord
   validates :code_bank, presence: true
   validates :agency_bank, presence: true
   validates :account_number, presence: true
+  validate :check_if_already_in_company
 
   def self.available_methods
     company = Company.find_by(corporate_name: 'Paynow')
@@ -19,5 +20,11 @@ class BilletMethod < ApplicationRecord
     payment_method = company.billet_methods.find(billet_id).dup
     payment_method.update(billet_params)
     payment_method
+  end
+
+  def check_if_already_in_company
+    if self.company && self.company.billet_methods.exists?(name: self.name) && self.id.nil? 
+      errors.add(:base, :invalid, message: I18n.t('payment_method_already'))
+    end
   end
 end

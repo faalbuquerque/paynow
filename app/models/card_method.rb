@@ -5,6 +5,7 @@ class CardMethod < ApplicationRecord
   validates :tax_charge, presence: true
   validates :tax_max, presence: true
   validates :code, presence: true
+  validate :check_if_already_in_company
 
   def self.available_methods
     company = Company.find_by(corporate_name: 'Paynow')
@@ -17,5 +18,11 @@ class CardMethod < ApplicationRecord
     payment_method = company.card_methods.find(card_id).dup
     payment_method.update(card_params)
     payment_method
+  end
+
+  def check_if_already_in_company
+    if self.company && self.company.card_methods.exists?(name: self.name) && self.id.nil? 
+      errors.add(:base, :invalid, message: I18n.t('payment_method_already'))
+    end
   end
 end

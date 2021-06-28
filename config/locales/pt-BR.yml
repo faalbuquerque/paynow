@@ -226,3 +226,5 @@ pt-BR:
   unauthorized: Acesso não autorizado!
   back: Voltar
   edit: Editar
+
+  payment_method_already: Metodo de pagamento %{model} já cadastrado!
